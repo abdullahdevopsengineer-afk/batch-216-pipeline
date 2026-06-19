@@ -6,17 +6,17 @@ on:
      - main
 jobs: 
   store-arfitcat:
-    runs-on: ubuntu-Latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: checkout code
         uses: actions/checkout@v4
       - name: create artifact
         run: |
-          echo "hello world" > artifact.txt"
+          echo "hello world" > artifact.txt
           cat artifact.txt
       - name: upload artifact
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-artifact@v4
         with:
           name: artifact-folder
           path: artifact.txt
