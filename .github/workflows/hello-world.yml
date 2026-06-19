@@ -11,3 +11,5 @@ jobs:
     steps:
       - name: hello world
         run: echo "hello world"
+      - name: show current user 
+        run: whoami
