@@ -1,0 +1,22 @@
+name: store artifact demo 
+
+on: 
+  push:
+    branches: 
+     - main
+jobs: 
+  store-arfitcat:
+    runs-on: ubuntu-Latest
+
+    steps:
+      - name: checkout code
+        uses: actions/checkout@v4
+      - name: create artifact
+        run: |
+          echo "hello world" > artifact.txt"
+          cat artifact.txt
+      - name: upload artifact
+        uses: actions/upload-artifact@v7
+        with:
+          name: artifact-folder
+          path: artifact.txt
